@@ -1,0 +1,42 @@
+.DrawerContainer {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DrawerContainer .Drawer {
+  width: 100%;
+  height: 100%;
+}
+
+.DrawerContainer .Drawer .DrawerItems {
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.DrawerContainer .Drawer .DrawerItems .DrawerBottomSection {
+  padding: 0px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  width: 100%;
+}
+
+.AnchorHanbargerButton {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .AnchorHanbargerButton {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 600;
+  }
+}

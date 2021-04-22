@@ -1,0 +1,26 @@
+.UsersPage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10px;
+}
+
+.UsersPage .User {
+  margin-bottom: 20px;
+  padding: 10px;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-direction: row;
+}
+/* @media (max-width: 950px) {
+  .DashboardPage {
+    flex-direction: column;
+  }
+} */

@@ -1,0 +1,26 @@
+.DashboardPage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+.DashboardPage > * {
+  flex-basis: 100%;
+}
+
+.TableContainer {
+  margin-top: 20px;
+}
+.TableContainer .Table .TableRow {
+  /* background-color: #f2f; */
+  border: none;
+}
+
+@media (max-width: 950px) {
+  .DashboardPage {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,31 @@
+/* INPUT BASE  */
+.CustomInput .InputBase {
+  width: 100%;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.MuiInputBase-input.MuiOutlinedInput-input.MuiAutocomplete-input.MuiAutocomplete-inputFocused.MuiInputBase-inputAdornedEnd.MuiOutlinedInput-inputAdornedEnd {
+  padding: 0px;
+}
+
+.CustomInputSelectPlaceholder {
+  cursor: pointer;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* FOR REACT SELECT */
+.Select-menu-outer {
+  z-index: 999 !important;
+}

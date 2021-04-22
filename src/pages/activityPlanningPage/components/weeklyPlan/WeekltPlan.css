@@ -1,0 +1,26 @@
+.WeekltPlan .TopSection .Selector {
+  margin-bottom: 20px;
+}
+.WeekltPlan .TopSection .Selector p {
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.WeekltPlan .BottomSection {
+  margin-top: 40px;
+}
+
+.WeekltPlan .BottomSection .WeekButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.WeekltPlan .BottomSection .WeekButtons .WeekButton {
+  height: 40px;
+  width: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.05);
+}

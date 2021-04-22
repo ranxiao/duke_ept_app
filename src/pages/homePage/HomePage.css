@@ -1,0 +1,43 @@
+/* .HomePage {
+  display: flex;
+  gap: 20px;
+}
+
+.HomePage > * {
+  flex-basis: 100%;
+}
+
+.TableContainer {
+  margin-top: 20px;
+}
+.TableContainer .Table .TableRow {
+  border: none;
+}
+
+@media (max-width: 950px) {
+  .HomePage {
+    flex-direction: column;
+  }
+} */
+
+.HomePage {
+  display: flex;
+  gap: 20px;
+}
+
+.HomePage > * {
+  flex-basis: 100%;
+}
+
+.TableContainer {
+  margin-top: 20px;
+}
+.TableContainer .Table .TableRow {
+  border: none;
+}
+
+@media (max-width: 950px) {
+  .HomePage {
+    flex-direction: column;
+  }
+}

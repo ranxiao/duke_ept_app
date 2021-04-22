@@ -1,0 +1,36 @@
+.NotFoundBody {
+     display: flex;
+     flex: 1;
+     position: relative;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     flex-direction: column;
+}
+
+.NotFoundBody .Image {
+     display: flex;
+     justify-content: center;
+
+}
+
+.NotFoundBody .Image img {
+     max-width: 600px;
+     width: 80%;
+}
+
+
+.NotFoundBody .Button{
+     margin-top: 40px;
+}
+
+.NotFoundBody .Button Button {
+     border-radius: 20px;
+     /* padding-top: 10px; */
+     background-color: #2498FE;
+     color: white;
+     width: 250px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}

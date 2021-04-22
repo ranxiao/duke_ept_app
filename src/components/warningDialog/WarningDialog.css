@@ -1,0 +1,39 @@
+.WarningDialog {
+  padding: 20px;
+}
+
+.WarningDialog .WarningDialog-Header {
+  margin-bottom: 10px;
+}
+.WarningDialog .WarningDialog-Header h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.WarningDialog .WarningDialog-Body h4 {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.WarningDialog-Action .Buttons {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.WarningDialog-Action .Buttons .ExitButton {
+  width: 100px;
+
+  height: 40px;
+  border-width: 1px;
+  border-style: solid;
+  /* padding: 0px 15px; */
+  margin-right: 25px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  text-transform: none;
+  text-decoration: none;
+}

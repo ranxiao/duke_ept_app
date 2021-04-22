@@ -1,0 +1,41 @@
+.HeaderContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Header {
+  height: 100%;
+  width: 100%;
+  max-width: 1240px;
+
+  padding: 0px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header .Icon {
+  height: 40px;
+  width: 40px;
+}
+
+.Header .Icon img {
+  height: 100%;
+  width: 100%;
+}
+.HeaderContainer .Header .HeaderButtons {
+  display: flex;
+}
+
+@media (max-width: 800px) {
+  .HeaderContainer .Header .HeaderButtons {
+    display: none !important;
+  }
+  .Header {
+    width: 100%;
+  }
+}

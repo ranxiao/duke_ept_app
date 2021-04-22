@@ -1,0 +1,49 @@
+.ExercisePlan {
+  width: 100%;
+  display: grid;
+  /* grid-template-columns: repeat(7, 1fr); */
+  gap: 20px;
+  /* overflow: auto; */
+}
+
+.ExercisePlan .Day {
+  /* text-align: center; */
+  text-align: left;
+}
+
+.ExercisePlan .Day .Name {
+  /* background-color: red; */
+  margin-bottom: 20px;
+}
+
+.ExercisePlan .Day .Data {
+  width: 100%;
+}
+
+.ExercisePlan .Day .Data {
+  padding: 0px 5px 0px 10px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+
+  display: flex;
+  /* flex-direction: column; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ExercisePlan .Day .Data p {
+  padding: 10px 0px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  .ExercisePlan .Day .Name {
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  .ExercisePlan .Day {
+    display: block;
+  }
+}

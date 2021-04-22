@@ -1,0 +1,48 @@
+.Accordion {
+  box-shadow: none !important;
+  outline: none;
+  margin: 0px !important;
+  border: none;
+  border-top: none;
+  border-bottom: none;
+  border-top: 0.5px rgba(0, 0, 0, 0.05) solid !important;
+}
+.Accordion:last-of-type {
+  border-bottom: 0.5px rgba(0, 0, 0, 0.05) solid !important;
+}
+
+.Accordion::before {
+  margin: 0px !important;
+  border: none !important;
+  height: 0px !important;
+}
+.Accordion::after {
+  margin: 0px !important;
+  border: none !important;
+}
+
+.Accordion .AccordionSummary {
+  /* background-color: rgba(0, 0, 255, 0.06); */
+  box-shadow: none;
+  /* outline: none; */
+  height: 60px;
+}
+
+.Accordion .AccordionSummary-Body {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.Accordion .AccordionDetails-Body {
+  width: 100%;
+  display: flex !important;
+  flex-direction: column;
+}
+
+.Accordion .AccordionDetails-Body .WeekButton {
+  height: 35px !important;
+  justify-content: space-between !important;
+  font-weight: 600;
+  padding: 0px 20px;
+}
