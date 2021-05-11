@@ -1,5 +1,5 @@
 import "./Header.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 import { ThemeContext } from "../../context/ThemeContext";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useEffect, useState } from "react";
@@ -88,9 +88,18 @@ export default function Header() {
     <>
       <div className="HeaderContainer" style={{ height: 60 }}>
         <div className="Header">
-          <Link to="/">
-            <div className="Icon">
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <div
+              className="Icon"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: theme.textColor,
+              }}
+            >
               <img src={logo} alt="Logo" />
+              <h2 style={{ marginLeft: 10, fontWeight: 500 }}>DukeHealth</h2>
             </div>
           </Link>
 

@@ -4,9 +4,9 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-console.log = () => {};
-console.error = () => {};
-console.warn = () => {};
+// console.log = () => {};
+// console.error = () => {};
+// console.warn = () => {};
 
 ReactDOM.render(
   <React.StrictMode>
