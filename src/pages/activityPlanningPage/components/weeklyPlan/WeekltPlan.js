@@ -12,6 +12,11 @@ import categories from "../../../../data/categories";
 import activities from "../../../../data/activities";
 import CustomButton from "../../../../components/customStyles/CustomButton";
 import { SnackbarContext } from "../../../../context/SnackbarContext";
+import {
+  endOfWeek,
+  formattedDay,
+  getFirstDayOfWeek,
+} from "../../../../lib/getFirstDayOfWeek";
 
 // SUPER, ADMIN, MENTOR, MENTEE
 const convartActivityDataToSelect = (data, label) => {
@@ -155,10 +160,41 @@ export default function WeekltPlan({
     <div>
       <CustomCard
         label="Define your weekly plan here "
-        bodyPadding={20}
+        // bodyPadding={20}
         height="auto"
+        headerStyle={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 10,
+          paddingTop: 9,
+        }}
+        // subHeader={
+        // <CustomButton
+        //   borderRadius={25}
+        //   width={100}
+        //   label="Save"
+        //   onClick={() => handleActionButton()}
+        //   loading={loadingActivity}
+        // />
+        // }
       >
-        <div className="WeekltPlan">
+        <h5
+          style={{
+            color: theme.textColor3,
+            fontSize: 14,
+            fontWeight: 500,
+            paddingLeft: 20,
+          }}
+        >
+          {"( " +
+            formattedDay(getFirstDayOfWeek()) +
+            " - " +
+            formattedDay(endOfWeek(getFirstDayOfWeek())) +
+            " )"}
+        </h5>
+
+        <div className="WeekltPlan" style={{ margin: 20 }}>
           <div className="TopSection">
             <div className="Selector">
               <p style={{ color: theme.textColor3 }}>Difficulty Level</p>

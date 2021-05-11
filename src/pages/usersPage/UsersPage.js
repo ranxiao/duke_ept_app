@@ -115,80 +115,159 @@ export default function UsersPage() {
           <List component="nav" style={{ paddingBottom: 0 }}>
             {!loading && users && users.map ? (
               users.length > 0 ? (
-                users.map((user, index) => {
-                  return (
-                    <Grow
-                      key={index}
-                      in={user !== null}
-                      style={{ transformOrigin: "0 0 0" }}
-                      {...(user ? { timeout: 250 * index } : {})}
-                    >
-                      <ListItemWithWiderSecondaryAction
-                        dense
-                        // button
-                        style={{
-                          paddingLeft: 20,
-                          minHeight: 60,
-                          borderBottom: "1px rgba(0, 0, 0, 0.05) solid",
-                        }}
-                        // component={Link}
-                        // to={`/users/${user._id || user.id}`}
-                        draggable={false}
+                users.slice(0).reverse().map((user, index) => {
+                  console.log(" *************** ",user.role)
+                  if(user.role === "ADMIN") {
+                    return (
+                      <Grow
+                        key={index}
+                        in={user !== null}
+                        style={{ transformOrigin: "0 0 0" }}
+                        {...(user ? { timeout: 250 * index } : {})}
                       >
-                        <div
-                          className="ListTableBody"
+                        <ListItemWithWiderSecondaryAction
+                          dense
+                          // button
                           style={{
-                            color: theme.textColor,
+                            paddingLeft: 20,
+                            minHeight: 60,
+                            borderBottom: "1px rgba(0, 0, 0, 0.05) solid",
                           }}
+                          // component={Link}
+                          // to={`/users/${user._id || user.id}`}
+                          draggable={false}
                         >
-                          <h3
+                          <div
+                            className="ListTableBody"
                             style={{
                               color: theme.textColor,
-                              fontWeight: 600,
                             }}
                           >
-                            {user.fullName && user.fullName}
-                          </h3>
-                          <p style={{ color: theme.textColor2 }}>
-                            {user.email && user.email}
-                          </p>
-                        </div>
+                            <h3
+                              style={{
+                                color: theme.textColor,
+                                fontWeight: 600,
+                              }}
+                            >
+                              {user.fullName && user.fullName}
+                            </h3>
+                            <p style={{ color: theme.textColor2 }}>
+                              {user.email && user.email}
+                            </p>
+                          </div>
 
-                        <ListItemSecondaryAction>
-                          <IconButton
-                            edge="end"
-                            aria-label="comments"
-                            style={{ marginRight: 20 }}
-                            onClick={() => {
-                              setShowChangePasswordModal(true);
-                              setSelectedUsers(user);
-                            }}
-                          >
-                            <EditRoundedIcon
-                              style={{ color: theme.buttonColor }}
-                            />
-                          </IconButton>
-
-                          {user.id !== authContext.user.id && (
+                          <ListItemSecondaryAction>
                             <IconButton
                               edge="end"
                               aria-label="comments"
-                              style={{ marginRight: 0 }}
+                              style={{ marginRight: 20 }}
                               onClick={() => {
-                                // deleteUser(user._id);
-                                deleteUser(user.id || user._id);
-                                // setShowDeleteModal(!showDeleteModal);
+                                setShowChangePasswordModal(true);
+                                setSelectedUsers(user);
                               }}
                             >
-                              <DeleteRoundedIcon
-                                style={{ color: "rgba(220,20,60,1)" }}
+                              <EditRoundedIcon
+                                style={{ color: theme.buttonColor }}
                               />
                             </IconButton>
-                          )}
-                        </ListItemSecondaryAction>
-                      </ListItemWithWiderSecondaryAction>
-                    </Grow>
-                  );
+
+                            {user.id !== authContext.user.id && (
+                              <IconButton
+                                edge="end"
+                                aria-label="comments"
+                                style={{ marginRight: 0 }}
+                                onClick={() => {
+                                  // deleteUser(user._id);
+                                  deleteUser(user.id || user._id);
+                                  // setShowDeleteModal(!showDeleteModal);
+                                }}
+                              >
+                                <DeleteRoundedIcon
+                                  style={{ color: "rgba(220,20,60,1)" }}
+                                />
+                              </IconButton>
+                            )}
+                          </ListItemSecondaryAction>
+                        </ListItemWithWiderSecondaryAction>
+                      </Grow>
+                    );
+                  } else {
+                    return (
+                      <Grow
+                        key={index}
+                        in={user !== null}
+                        style={{ transformOrigin: "0 0 0" }}
+                        {...(user ? { timeout: 250 * index } : {})}
+                      >
+                        <ListItemWithWiderSecondaryAction
+                          dense
+                          // button
+                          style={{
+                            paddingLeft: 20,
+                            minHeight: 60,
+                            borderBottom: "1px rgba(0, 0, 0, 0.05) solid",
+                          }}
+                          // component={Link}
+                          // to={`/users/${user._id || user.id}`}
+                          draggable={false}
+                        >
+                          <div
+                            className="ListTableBody"
+                            style={{
+                              color: theme.textColor,
+                            }}
+                          >
+                            <h3
+                              style={{
+                                color: theme.textColor,
+                                fontWeight: 600,
+                              }}
+                            >
+                              {user.fullName && user.fullName}
+                            </h3>
+                            <p style={{ color: theme.textColor2 }}>
+                              {user.email && user.email}
+                            </p>
+                          </div>
+
+                          <ListItemSecondaryAction>
+                            <IconButton
+                              edge="end"
+                              aria-label="comments"
+                              style={{ marginRight: 20 }}
+                              onClick={() => {
+                                setShowChangePasswordModal(true);
+                                setSelectedUsers(user);
+                              }}
+                            >
+                              <EditRoundedIcon
+                                style={{ color: theme.buttonColor }}
+                              />
+                            </IconButton>
+
+                            {user.id !== authContext.user.id && (
+                              <IconButton
+                                edge="end"
+                                aria-label="comments"
+                                style={{ marginRight: 0 }}
+                                onClick={() => {
+                                  // deleteUser(user._id);
+                                  deleteUser(user.id || user._id);
+                                  // setShowDeleteModal(!showDeleteModal);
+                                }}
+                              >
+                                <DeleteRoundedIcon
+                                  style={{ color: "rgba(220,20,60,1)" }}
+                                />
+                              </IconButton>
+                            )}
+                          </ListItemSecondaryAction>
+                        </ListItemWithWiderSecondaryAction>
+                      </Grow>
+                    );
+                  }
+
+
                 })
               ) : (
                 <div

@@ -217,7 +217,10 @@ export default function ExercisePlan({
                     }}
                   >
                     <CloseRoundedIcon
-                      style={{ color: theme.buttonColor, fontSize: "1.25rem" }}
+                      style={{
+                        color: theme.buttonColor,
+                        fontSize: "1.25rem",
+                      }}
                     />
                   </IconButton>
                 </div>

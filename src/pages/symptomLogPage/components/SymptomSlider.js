@@ -7,6 +7,7 @@ const valuetext = (value) => {
 
 export default function SymptomSlider({
   theme,
+  value,
   setValue,
   label,
   text1,
@@ -26,7 +27,7 @@ export default function SymptomSlider({
         {label}
       </h5>
       <Slider
-        defaultValue={5}
+        // defaultValue={5}
         getAriaValueText={valuetext}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
@@ -34,6 +35,7 @@ export default function SymptomSlider({
         marks
         min={0}
         max={10}
+        value={value}
         onChange={(e, v) => setValue(v)}
       />
       <div style={{ display: "flex", justifyContent: "space-between" }}>

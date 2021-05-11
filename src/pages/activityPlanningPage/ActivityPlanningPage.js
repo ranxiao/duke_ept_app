@@ -37,6 +37,7 @@ export default function ActivityPlanningPage() {
   }, []);
 
   const checkWeek = () => {
+    
     setLoadingStatusCheck(true);
     httpClient()
       .post(`/activities/checkWeek`, {

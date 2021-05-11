@@ -103,7 +103,7 @@ export default function Symptoms({ theme }) {
                     <LinearProgress
                       variant="determinate"
                       style={{ height: 6, borderRadius: 3, marginTop: 5 }}
-                      value={Object.values(symptoms.symptoms)[index] || 0}
+                      value={(Object.values(symptoms.symptoms)[index] || 0) * 10}
                     />
                   </div>
                 );
@@ -154,7 +154,7 @@ export default function Symptoms({ theme }) {
                     <LinearProgress
                       variant="determinate"
                       style={{ height: 6, borderRadius: 3, marginTop: 5 }}
-                      value={Object.values(symptoms.activities)[index] || 0}
+                      value={(Object.values(symptoms.activities)[index] || 0) * 10}
                     />
                   </div>
                 );
@@ -206,7 +206,7 @@ export default function Symptoms({ theme }) {
                     <LinearProgress
                       variant="determinate"
                       style={{ height: 6, borderRadius: 3, marginTop: 5 }}
-                      value={Object.values(symptoms.exercise)[index] || 0}
+                      value={(Object.values(symptoms.exercise)[index] || 0) * 10}
                     />
                   </div>
                 );

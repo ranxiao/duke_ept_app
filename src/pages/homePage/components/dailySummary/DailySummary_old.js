@@ -76,12 +76,13 @@ export default function DailySummary({ theme }) {
       Math.max(newSortedData.length - 30, 0)
     );
 
-    if (newNewSortedData.length < 30) {
-      for (let i = 0; i < 30; i++) {
-        newNewSortedData.push(0);
-      }
-      // setAlreadyShifted(true);
-    }
+    // if (prevDayyCount > 0 && showMonthlyView) {
+    //   for (let i = 0; i < prevDayyCount - 1; i++) {
+    //     newNewSortedData.unshift(0);
+    //   }
+    //   setAlreadyShifted(true);
+    // }
+
     setYourData(cumSum(newNewSortedData));
 
     console.log(
@@ -117,7 +118,7 @@ export default function DailySummary({ theme }) {
         userId: authContext.user?.id || authContext.user?._id,
         // startDay: getFirstDayOfWeek().toLocaleDateString(),
         startDay: showMonthlyView ? "0" : formattedDay(getFirstDayOfWeek()),
-        showMonthlyView: showMonthlyView,
+        month: showMonthlyView && currentMonthCountString,
       })
       .then((res) => {
         console.log("DailySummary :,", showMonthlyView, res.data);

@@ -20,12 +20,13 @@
 
 .Header .Icon {
   height: 40px;
-  width: 40px;
+  /* width: 40px; */
+  width: 100%;
 }
 
 .Header .Icon img {
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
 }
 .HeaderContainer .Header .HeaderButtons {
   display: flex;

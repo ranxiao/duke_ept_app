@@ -18,10 +18,10 @@ export default function DailySummary({ theme }) {
 
   const [showMonthlyView, setShowMonthlyView] = useState(false);
 
-  const [summary, setSummary] = useState();
+  // const [summary, setSummary] = useState();
   const [activities, setActivities] = useState([]);
-  const [days, setDays] = useState();
-  const [alreadyShifted, setAlreadyShifted] = useState(false);
+  // const [days, setDays] = useState();
+  // const [alreadyShifted, setAlreadyShifted] = useState(false);
 
   useEffect(() => {
     getData();
@@ -38,79 +38,21 @@ export default function DailySummary({ theme }) {
   }
 
   useEffect(() => {
-    console.log("activities: ", activities);
-    const result = activities?.reduce((acc, d) => {
-      const found = acc.find((a) => a.dayId === d.dayId);
-      //const value = { name: d.name, val: d.value };
-      const value = d.mET; // the element in data property
-      // const value = acc.reduce((acc, cur) => acc + cur.mET, 0)
-      if (!found) {
-        //acc.push(...value);
-        acc.push({ dayId: d.dayId, data: [value] }); // not found, so need to add data property
-      } else {
-        //acc.push({ name: d.name, data: [{ value: d.value }, { count: d.count }] });
-        found.data.push(value); // if found, that means data property exists, so just push new element to found.data.
-      }
-      return acc;
-    }, []);
+    // console.log("activities: ", activities);
 
-    let newSortedData = [];
-    let sortedData = result;
+    let tempActivities = [];
 
-    // newSortedData = sortedData.reduce((acc, cur) => acc + cur.data, 0)
-    sortedData?.map((sd, index) => {
-      newSortedData.push(sd.data.reduce((acc, cur) => acc + cur, 0));
+    activities?.map((activity) => {
+      tempActivities.push([activity.date, activity.mET]);
     });
 
-    // console.log(
-    //   " ==========>>>>>",
-    //
-    // );
-
-    let prevDayyCount = parseInt(
-      (summary?.days && summary?.days[0]?.date?.substring(3, 5)) || 0
-    );
-
-    // unshift
-    let newNewSortedData = newSortedData.slice(
-      Math.max(newSortedData.length - 30, 0)
-    );
-
-    if (newNewSortedData.length < 30) {
-      for (let i = 0; i < 30; i++) {
-        newNewSortedData.push(0);
-      }
-      // setAlreadyShifted(true);
-    }
-    setYourData(cumSum(newNewSortedData));
-
-    console.log(
-      "newNewSortedData: ",
-      { prevDayyCount },
-      summary,
-      summary?.days,
-      newNewSortedData
-    );
+    console.log("tempActivities : ", tempActivities);
   }, [activities]);
 
   // new Date(date.getFullYear(), date.getMonth(), 1)
   const getData = () => {
     setLoading(true);
     // const date = new Date();
-    const dateForCurrentMonth = new Date();
-    const currentMonthCount = new Date(
-      dateForCurrentMonth.getFullYear(),
-      dateForCurrentMonth.getMonth(),
-      1
-    ).getMonth();
-
-    let currentMonthCountString;
-
-    if (currentMonthCount < 10) {
-      currentMonthCountString = "0" + (currentMonthCount + 1);
-    } else {
-      currentMonthCountString = currentMonthCount + 1;
-    }
 
     httpClient()
       .post("/activities/summary", {
@@ -120,15 +62,15 @@ export default function DailySummary({ theme }) {
         showMonthlyView: showMonthlyView,
       })
       .then((res) => {
-        console.log("DailySummary :,", showMonthlyView, res.data);
-        setSummary(res.data);
+        // console.log("DailySummary :,", showMonthlyView, res.data);
+        // setSummary(res.data);
 
         // setActivities(res.data?.activities);
         setActivities(res.data);
 
-        {
-          showMonthlyView === true && setDays(res.data?.days);
-        }
+        // {
+        //   showMonthlyView === true && setDays(res.data?.days);
+        // }
 
         setLoading(false);
       })
@@ -144,7 +86,7 @@ export default function DailySummary({ theme }) {
     return new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
   };
 
-  console.log(getDaysInMonth());
+  // console.log(getDaysInMonth());
 
   const [getWeekDays, setGetWeekDays] = useState([
     "Day 1",
@@ -184,7 +126,7 @@ export default function DailySummary({ theme }) {
       }}
       subHeader={
         <div>
-          <Tooltip title={showMonthlyView ? "Monthly View" : "Weekly View"}>
+          <Tooltip title={showMonthlyView ? "Weekly View" : "Monthly View"}>
             <IconButton
               style={{
                 backgroundColor: "rgba(0,0,0,.05)",
@@ -192,7 +134,7 @@ export default function DailySummary({ theme }) {
                 width: 40,
               }}
               onClick={() => {
-                getData();
+                // getData();
                 setShowMonthlyView((e) => !e);
               }}
             >

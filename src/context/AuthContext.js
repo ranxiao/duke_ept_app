@@ -32,9 +32,9 @@ export const AuthContextProvider = (props) => {
 
       httpClient()
         .get(`/user/${_id}`)
-        .then((res) => {
-          console.log("Data from ToggleAuth", res);
-          SaveUserData(res.data);
+        .then(({data}) => {
+          console.log("Data from ToggleAuth", data);
+          SaveUserData(data);
           setIsAuthenticated(true);
           setIsLoading(false);
         })

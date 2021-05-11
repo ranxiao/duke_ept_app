@@ -122,8 +122,8 @@ export default function ExciseTable({
           defaultValue={
             selfRatedExertion.find((e) => e.value === item.exertion) || [
               {
-                value: 3,
-                label: "Moderate",
+                value: 0,
+                label: "None",
               },
             ]
           }

@@ -30,29 +30,29 @@ export default function SymptomLogPage() {
 
   // START OF symptoms
   //What are your symptoms?
-  const [pain, setPain] = useState();
-  const [fatigue, setFatigue] = useState();
-  const [nausea, setNausea] = useState();
-  const [disturbedSleep, setDisturbedSleep] = useState();
-  const [anxietyOrNervousness, setAnxietyOrNervousness] = useState();
-  const [shortnessOfBreath, setShortnessOfBreath] = useState();
-  const [cantRememberThings, setCantRememberThings] = useState();
-  const [lackOfAppetite, setLackOfAppetite] = useState();
-  const [drowsy, setDrowsy] = useState();
-  const [sadness, setSadness] = useState();
-  const [vomit, setVomit] = useState();
-  const [numbnessOrTingling, setNumbnessOrTingling] = useState();
+  const [pain, setPain] = useState(5);
+  const [fatigue, setFatigue] = useState(5);
+  const [nausea, setNausea] = useState(5);
+  const [disturbedSleep, setDisturbedSleep] = useState(5);
+  const [anxietyOrNervousness, setAnxietyOrNervousness] = useState(5);
+  const [shortnessOfBreath, setShortnessOfBreath] = useState(5);
+  const [cantRememberThings, setCantRememberThings] = useState(5);
+  const [lackOfAppetite, setLackOfAppetite] = useState(5);
+  const [drowsy, setDrowsy] = useState(5);
+  const [sadness, setSadness] = useState(5);
+  const [vomit, setVomit] = useState(5);
+  const [numbnessOrTingling, setNumbnessOrTingling] = useState(5);
 
   //Have your symptoms interfered with your activities?
-  const [generalActivity, setGeneralActivity] = useState();
-  const [mood, setMood] = useState();
-  const [work, setWork] = useState();
-  const [relationWithOthers, setRelationWithOthers] = useState();
-  const [walking, setWalking] = useState();
-  const [enjoymentOfLife, setEnjoymentOfLife] = useState();
+  const [generalActivity, setGeneralActivity] = useState(5);
+  const [mood, setMood] = useState(5);
+  const [work, setWork] = useState(5);
+  const [relationWithOthers, setRelationWithOthers] = useState(5);
+  const [walking, setWalking] = useState(5);
+  const [enjoymentOfLife, setEnjoymentOfLife] = useState(5);
 
   //What do you think about the exercise plan in the last week?
-  const [difficultyLevel, setDifficultyLevel] = useState();
+  const [difficultyLevel, setDifficultyLevel] = useState(5);
   // END OF symptoms
 
   const history = useHistory();
@@ -233,61 +233,73 @@ export default function SymptomLogPage() {
                     <SymptomSlider
                       label="Pain"
                       theme={theme}
+                      value={pain}
                       setValue={setPain}
                     />
                     <SymptomSlider
                       label="Fatigue"
                       theme={theme}
+                      value={fatigue}
                       setValue={setFatigue}
                     />
                     <SymptomSlider
                       label="Nausea"
                       theme={theme}
+                      value={nausea}
                       setValue={setNausea}
                     />
                     <SymptomSlider
                       label="Disturbed Sleep"
                       theme={theme}
+                      value={disturbedSleep}
                       setValue={setDisturbedSleep}
                     />
                     <SymptomSlider
                       label="Anxiety or Nervousness"
                       theme={theme}
+                      value={anxietyOrNervousness}
                       setValue={setAnxietyOrNervousness}
                     />
                     <SymptomSlider
                       label="Shortness of Breath"
                       theme={theme}
+                      value={shortnessOfBreath}
                       setValue={setShortnessOfBreath}
                     />
                     <SymptomSlider
                       label="Can’t Remember Things"
                       theme={theme}
+                      value={cantRememberThings}
                       setValue={setCantRememberThings}
                     />
                     <SymptomSlider
                       label="Lack of Appetite"
                       theme={theme}
+                      value={lackOfAppetite}
                       setValue={setLackOfAppetite}
                     />
                     <SymptomSlider
                       label="Drowsy"
                       theme={theme}
+                      value={drowsy}
                       setValue={setDrowsy}
                     />
                     <SymptomSlider
                       label="Sadness"
                       theme={theme}
+                      value={sadness}
                       setValue={setSadness}
                     />
                     <SymptomSlider
                       label="Vomit"
                       theme={theme}
+                      value={vomit}
                       setValue={setVomit}
                     />
                     <SymptomSlider
                       label="Numbness or Tingling"
                       theme={theme}
+                      value={numbnessOrTingling}
                       setValue={setNumbnessOrTingling}
                       paddingBottom="0px"
                     />
@@ -316,31 +328,37 @@ export default function SymptomLogPage() {
                       <SymptomSlider
                         label="General Activity"
                         theme={theme}
+                        value={generalActivity}
                         setValue={setGeneralActivity}
                       />
                       <SymptomSlider
                         label="Mood"
                         theme={theme}
+                        value={mood}
                         setValue={setMood}
                       />
                       <SymptomSlider
                         label="Work"
                         theme={theme}
+                        value={work}
                         setValue={setWork}
                       />
                       <SymptomSlider
                         label="Relation With Others"
                         theme={theme}
+                        value={relationWithOthers}
                         setValue={setRelationWithOthers}
                       />
                       <SymptomSlider
                         label="Walking"
                         theme={theme}
+                        value={walking}
                         setValue={setWalking}
                       />
                       <SymptomSlider
                         label="Enjoyment of Life"
                         theme={theme}
+                        value={enjoymentOfLife}
                         setValue={setEnjoymentOfLife}
                         paddingBottom="0px"
                       />
@@ -368,6 +386,7 @@ export default function SymptomLogPage() {
                       <SymptomSlider
                         label="Difficulty Level"
                         theme={theme}
+                        value={difficultyLevel}
                         setValue={setDifficultyLevel}
                         text1="Too easy"
                         text2="Extremely Hard"

@@ -48,6 +48,8 @@ export default function DailyExcise({ theme }) {
   const [worningDialogMessage, setWorningDialogMessage] = useState("");
   const [worningDialogDescription, setWorningDialogDescription] = useState("");
 
+  const [hasNoneData, setHasNoneData] = useState(false);
+
   // getFirstDayOfWeek().toLocaleDateString()
 
   useEffect(() => {
@@ -153,13 +155,46 @@ export default function DailyExcise({ theme }) {
                 marginLeft: 20,
               }}
               onClick={() => {
+                let tempHasNoneData;
+
                 if (updateData.length > 0) {
-                  console.log("+>>>>>> .updateData", updateData);
-                  setShowWorningDialog(true);
-                  setWorningDialogMessage("Save Activity?");
-                  setWorningDialogDescription(
-                    "Are you sure you want to save this activities?"
-                  );
+                  updateData.map((d) => {
+                    if (d.exertion === 0) {
+                      tempHasNoneData = true;
+                      // alert(d.exertion);
+                    }
+                  });
+                }
+
+                // console.log(
+                //   "state : ",
+                //   ...updateData.map((d) => {
+                //     if (d.exertion === 0) {
+                //       return true;
+                //     }
+                //   })
+                // );
+
+                // updateData.map((d) => {
+                //   if (d.exertion === 0) {
+                //     setHasNoneData(true);
+                //   }
+                // });
+
+                if (updateData) {
+                  if (tempHasNoneData) {
+                    snackbarContext.Message(
+                      "Please select perception of difficulty for your activities.",
+                      "info"
+                    );
+                  } else {
+                    console.log("+>>>>>> .updateData", updateData);
+                    setShowWorningDialog(true);
+                    setWorningDialogMessage("Save Activity?");
+                    setWorningDialogDescription(
+                      "Are you sure you want to save this activities?"
+                    );
+                  }
                 } else {
                   snackbarContext.Message(
                     "You don't have any changed activity.",

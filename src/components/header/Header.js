@@ -1,5 +1,5 @@
 import "./Header.css";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import { ThemeContext } from "../../context/ThemeContext";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useEffect, useState } from "react";
