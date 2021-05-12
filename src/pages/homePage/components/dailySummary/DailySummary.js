@@ -76,12 +76,12 @@ export default function DailySummary({ theme }) {
       Math.max(newSortedData.length - 30, 0)
     );
 
-    if (newNewSortedData.length < 30) {
-      for (let i = 0; i < 30; i++) {
-        newNewSortedData.push(0);
-      }
-      // setAlreadyShifted(true);
-    }
+    // if (newNewSortedData.length < 30) {
+    //   for (let i = 0; i < 30; i++) {
+    //     newNewSortedData.push(0);
+    //   }
+    //   // setAlreadyShifted(true);
+    // }
     setYourData(cumSum(newNewSortedData));
 
     console.log(

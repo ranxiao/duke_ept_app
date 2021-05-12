@@ -72,23 +72,105 @@ export default function SymptomLogPage() {
     checkWeek();
   }, []);
 
+  // const formattedDay = (d) => {
+  //   let date = new Date(d);
+
+  //   let dd = String(date.getDate()).padStart(2, "0");
+  //   let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
+  //   let yyyy = date.getFullYear();
+
+  //   return mm + "/" + dd + "/" + yyyy;
+  // };
+
+  const getPreviousSunday = (today) => {
+    // var today = new Date();
+    // return new Date().setDate(today.getDate() - today.getDay() - 7);
+    return new Date().setDate(today.getDate() - today.getDay());
+  };
+
+  const getNextSunday = (today) => {
+    // var today = new Date();
+    return new Date().setDate(today.getDate() - today.getDay() + 7);
+  };
+
+  const getFirstDayOfWeekAWeek = (date) => {
+    let d = new Date(date);
+    // var diff = date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1);
+
+    var day = d.getDay(),
+      diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
+    return new Date(d.setDate(diff));
+  };
+
+  console.log(
+    formattedDay(getFirstDayOfWeekAWeek(getPreviousSunday(new Date()))),
+    ">>==========>",
+    formattedDay(getFirstDayOfWeekAWeek(getNextSunday(new Date()))),
+    "==========>",
+
+    formattedDay(new Date())
+  );
+
   const checkWeek = async () => {
+    const d = new Date();
+    const curDayIndex = d.getDay();
+
+    // if(n)
+    // startDay:
+    // (curDayIndex === 0 && formattedDay(getFirstDayOfWeek())) ||
+    // (curDayIndex > 0 &&
+    //   curDayIndex <= 3 &&
+    //   formattedDay(
+    //     getFirstDayOfWeekAWeek(getPreviousSunday(new Date()))
+    //   )),
+    // "checkWeek = ",
+    // if (
+    //   (curDayIndex === 0 && formattedDay(getFirstDayOfWeek())) ||
+    //   (curDayIndex > 0 &&
+    //     curDayIndex < 3 &&
+    //     formattedDay(getFirstDayOfWeekAWeek(getPreviousSunday(new Date()))))
+    // ) {
+    //   console.log(
+    //     "checkWeek = True : ",
+    //     (curDayIndex === 0 && formattedDay(getFirstDayOfWeek())) ||
+    //       (curDayIndex > 0 &&
+    //         curDayIndex < 3 &&
+    //         formattedDay(getFirstDayOfWeekAWeek(getPreviousSunday(new Date()))))
+    //   );
+    // } else {
+    //   console.log("checkWeek = False");
+    // }
+
     setLoading(true);
-    console.log("checkWeek");
+    // console.log("checkWeek");
+    // startDay: formattedDay(getFirstDayOfWeek()),
     await httpClient()
       .post(`/symptoms/checkWeek`, {
         userId: authContext.user?.id || authContext.user?._id,
-        startDay: formattedDay(getFirstDayOfWeek()),
+        startDay:
+          curDayIndex === 0
+            ? formattedDay(getFirstDayOfWeek())
+            : formattedDay(
+                getFirstDayOfWeekAWeek(getPreviousSunday(new Date()))
+              ),
       })
       .then((res) => {
-        console.log("Check", res.data.length > 0 ? true : false, res.data);
+        let dataasddas = "dsadsa";
+        console.log("Check", dataasddas, curDayIndex);
+        console.log("Check", dataasddas);
+
+        //   curDayIndex === 0 && formattedDay(getFirstDayOfWeek()),
+        //   curDayIndex > 0 && "ads",
+        //   curDayIndex < 3 &&
+        //     formattedDay(getFirstDayOfWeekAWeek(getPreviousSunday(new Date()))),
+        //   "null",
+        //   res.data.length > 0 ? true : false,
+        //   res.data
+        // );
         if (!res.data.length > 0) {
           console.log("BIG TRUE");
           setHasActivities(false);
-          if (
-            formattedDay(endOfWeek(getFirstDayOfWeek())) ===
-            formattedDay(new Date())
-          ) {
+          if (curDayIndex < 3) {
             setIsWeekend(true);
           } else {
             setIsWeekend(false);
@@ -117,6 +199,10 @@ export default function SymptomLogPage() {
 
   const [loadingActivity, setLoadingActivity] = useState();
   const addActivity = () => {
+    // if (true) {
+    //   console.log("!!!!!!!!!!!!!!!");
+    //   return;
+    // }
     if (
       pain === undefined ||
       fatigue === undefined ||
@@ -141,12 +227,26 @@ export default function SymptomLogPage() {
       snackbarContext.Message("Please select your exercise plan", "info");
       setLoadingActivity(false);
     } else {
+      const d = new Date();
+      const curDayIndex = d.getDay();
+
       setLoadingActivity(true);
       console.log(getFirstDayOfWeek());
+      console.log(
+        "78888888888 => ",
+        curDayIndex === 0
+          ? formattedDay(getFirstDayOfWeek())
+          : formattedDay(getFirstDayOfWeekAWeek(getPreviousSunday(new Date())))
+      );
       httpClient()
         .post(`/symptoms`, {
           userId: authContext.user?.id || authContext.user?._id,
-          startDay: formattedDay(getFirstDayOfWeek()),
+          startDay:
+            curDayIndex === 0
+              ? formattedDay(getFirstDayOfWeek())
+              : formattedDay(
+                  getFirstDayOfWeekAWeek(getPreviousSunday(new Date()))
+                ),
 
           pain: pain,
           fatigue: fatigue,
