@@ -175,7 +175,7 @@ export default function DailySummary({ theme }) {
 
   return (
     <CustomCard
-      label="Daily Summary"
+      label="Excise Tracking"
       bodyPadding={20}
       headerStyle={{
         display: "flex",
@@ -221,7 +221,7 @@ export default function DailySummary({ theme }) {
             labels: showMonthlyView ? getMonthDays : getWeekDays,
             datasets: [
               {
-                label: "Workout Summary",
+                label: "Cumulative Effort (measured in MET)",
                 data: yourData,
                 backgroundColor: "#00509D44",
                 borderColor: theme.buttonColor,

@@ -99,7 +99,7 @@ export default function Header() {
               }}
             >
               <img src={logo} alt="Logo" />
-              <h2 style={{ marginLeft: 10, fontWeight: 500 }}>DukeHealth</h2>
+              <h2 style={{ marginLeft: 10, fontWeight: 500 }}>Exercise Planning and Tracking Web Tool</h2>
             </div>
           </Link>
 

@@ -115,7 +115,7 @@ export default function AddUserPage() {
                   color: theme.textColor2,
                 }}
               >
-                Full Name:
+                Study number (e.g.SN1):
               </p>
               <input
                 type="userName"
@@ -126,7 +126,7 @@ export default function AddUserPage() {
                 }}
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                placeholder="Full Name"
+                placeholder="SN#"
               />
             </div>
 
@@ -139,7 +139,7 @@ export default function AddUserPage() {
                   color: theme.textColor2,
                 }}
               >
-                Username / Email:
+                Username(used for login):
               </p>
               <input
                 // type="email"
@@ -150,7 +150,7 @@ export default function AddUserPage() {
                 }}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
+                placeholder="Username"
               />
             </div>
 

@@ -91,10 +91,14 @@ export default function LoginPage() {
               }}
             >
               Welcome to the EPT website, an online exercise planning and
-              tracking tool designed to promote physical activity for cancer
-              patients. <br />
+              tracking (EPT) tool designed to promote physical activities. <br />
               <br />
-              Please login and start getting healthier.
+              Start to leverage the EPT tool as easy as one-two-three: <br />
+              Step 1: Every Monday morning, go to "Activity Planning" page to plan the daily exercise for every day in the current weekly cycle (Monday-Sunday)<br />
+              Step 2: Everyday, go to "Home" page to complete scheduled activities for the day and track your exercise progress.<br />
+              Step 3: Every Sunday, go to "Symptom Log" page to input your perceived symptoms averaged across the past week. <br />
+              <br />
+              Please refer to the EPT user manual for more help information, and contact the study coordinator if you have any questions.<br />
             </p>
           </div>
 

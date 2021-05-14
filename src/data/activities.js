@@ -384,7 +384,7 @@ export default [
   },
   {
     id: 38,
-    mET: 2.5,
+    mET: 3,
     categoryId: 3,
     difficultyId: 4,
     activity: "One foot stands",
@@ -426,7 +426,7 @@ export default [
   },
   {
     id: 42,
-    mET: 2.5,
+    mET: 3,
     categoryId: 3,
     difficultyId: 4,
     activity: "Heel toe walking 10 steps back and forth 5 times (no support)",
@@ -509,7 +509,7 @@ export default [
   },
   {
     id: 50,
-    mET: 3,
+    mET: 3.5,
     categoryId: 3,
     difficultyId: 4,
     activity: "Sit to Stand",
@@ -561,7 +561,7 @@ export default [
 
   {
     id: 55,
-    mET: 2.5,
+    mET: 3,
     categoryId: 4,
     difficultyId: 1,
     activity: "Accelerate decelerate walking",
@@ -571,7 +571,7 @@ export default [
   },
   {
     id: 56,
-    mET: 2.5,
+    mET: 3,
     categoryId: 4,
     difficultyId: 2,
     activity: "Accelerate decelerate walking",
@@ -581,7 +581,7 @@ export default [
   },
   {
     id: 57,
-    mET: 3,
+    mET: 3.5,
     categoryId: 4,
     difficultyId: 3,
     activity: "Accelerate decelerate walking",
@@ -591,7 +591,7 @@ export default [
   },
   {
     id: 58,
-    mET: 3,
+    mET: 4,
     categoryId: 4,
     difficultyId: 4,
     activity: "Accelerate decelerate walking",
@@ -616,17 +616,17 @@ export default [
     categoryId: 4,
     difficultyId: 3,
     activity: "Figure eights",
-    parameterExample: "Repeat 2 times",
+    parameterExample: "Repeat 5 times",
     minRPE: 0,
     maxRPE: 9,
   },
   {
     id: 61,
-    mET: 3,
+    mET: 3.5,
     categoryId: 4,
     difficultyId: 4,
     activity: "Figure eights",
-    parameterExample: "Repeat 2 times",
+    parameterExample: "Repeat 10 times",
     minRPE: 0,
     maxRPE: 9,
   },
