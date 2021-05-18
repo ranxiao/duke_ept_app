@@ -116,7 +116,8 @@ export default function DailySummary({ theme }) {
       .post("/activities/summary", {
         userId: authContext.user?.id || authContext.user?._id,
         // startDay: getFirstDayOfWeek().toLocaleDateString(),
-        startDay: showMonthlyView ? "0" : formattedDay(getFirstDayOfWeek()),
+        // startDay: showMonthlyView ? "0" : formattedDay(getFirstDayOfWeek()),
+        startDay: formattedDay(getFirstDayOfWeek()),
         showMonthlyView: showMonthlyView,
       })
       .then((res) => {
